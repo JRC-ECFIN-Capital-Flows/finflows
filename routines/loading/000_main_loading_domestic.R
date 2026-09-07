@@ -7,8 +7,8 @@ if (!require("MDecfin")) {
   stop("MDecfin package is required but not installed")
 }
 # Set the project directories
-if (!exists("data_dir")) data_dir <- '\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/data/loaded'
-script_dir <- '\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/finflows/routines'
+if (!exists("data_dir")) data_dir <- '\\\\\\siprsto06p.delta.europa.eu/ECOFIN/FinFlows/githubrepo/data/loaded'
+script_dir <- '\\\\\\siprsto06p.delta.europa.eu/ECOFIN/FinFlows/githubrepo/finflows/routines'
 
 # Check directories exist
 if (!dir.exists(script_dir)) {
