@@ -2,14 +2,14 @@ library(MDstats);
 
 # Set data directory
 #data_dir= file.path(getwd(),'data')
-if (!exists("data_dir")) data_dir = '\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/finflows/data/'
+if (!exists("data_dir")) data_dir = '\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/data/filled'
 source('\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/finflows/routines/utilities.R')
 gc()
 
 
 ## load filled iip bop
-aa=readRDS(file.path(data_dir,'aa_iip_lbs.rds')); gc()
-ll=readRDS(file.path(data_dir,'ll_iip_lbs.rds')); gc()
+aa=readRDS(file.path(data_dir,'aa_iip_dip.rds')); gc()
+ll=readRDS(file.path(data_dir,'ll_iip_dip.rds')); gc()
 gc()
 
 
@@ -111,9 +111,9 @@ ll[.WRL_REST.S1.S1M+S11.LE._Tx7.2022q4.AT]
 
 
 
-saveRDSvl(aa,file.path(data_dir,'aa_iip_agg.rds'))
-saveRDSvl(ll,file.path(data_dir,'ll_iip_agg.rds'))
+saveRDS(aa,file.path(data_dir,'aa_iip_agg.rds'))
+saveRDS(ll,file.path(data_dir,'ll_iip_agg.rds'))
 
-saveRDSvl(aa,file.path(data_dir,'vintages/aa_iip_agg_' %&% format(Sys.time(),'%F') %&% '_.rds'))
-saveRDSvl(ll,file.path(data_dir,'vintages/ll_iip_agg_' %&% format(Sys.time(),'%F') %&% '_.rds'))
+saveRDS(aa,file.path(data_dir,'vintages/aa_iip_agg_' %&% format(Sys.time(),'%F') %&% '_.rds'))
+saveRDS(ll,file.path(data_dir,'vintages/ll_iip_agg_' %&% format(Sys.time(),'%F') %&% '_.rds'))
 
