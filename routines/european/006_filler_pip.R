@@ -30,13 +30,14 @@ gc()
 # --- Load aa, ll ---
 #############################################################################
 
-aa <- readRDS(file.path(data_dir, 'aa_iip_shss.rds')); gc()
-ll <- readRDS(file.path(data_dir, 'll_iip_shss.rds')); gc()
+aa <- readRDS(file.path(data_dir, 'aa_iip_ivf.rds')); gc()
+ll <- readRDS(file.path(data_dir, 'll_iip_ivf.rds')); gc()
 
 #############################################################################
 # --- Load PIP country list ---
 #############################################################################
-
+gc()
+gc()
 whatctries <- readRDS(file.path(loaded_dir, 'pipbuffer/whatctries_pip.rds'))
 ccc <- dimcodes(whatctries)[[1]]
 AREA <- ccc[, 1]  # ISO3 codes
@@ -59,7 +60,7 @@ rm(exra, exrs); gc()
 
 map_indicator <- c(
   "P_TOTINV_P_USD" = "F",
-  "P_F51_P_USD"    = "F51",
+  "P_F51_P_USD"    = "F5",    ####attention, the IMF calls F51 the aggregate which also includes IF parts, that is F51+F52=F5. THIS IS TO BE ADDED TO THE DOCUMENTATION.
   "P_F3_P_USD"     = "F3",
   "P_F3_S_P_USD"   = "F3S",
   "P_F3_L_P_USD"   = "F3L"
