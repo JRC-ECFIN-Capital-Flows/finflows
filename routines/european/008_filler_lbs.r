@@ -3,8 +3,7 @@ library(MD3)
 library(data.table)
 
 # Set data directory
-if (!exists("data_dir")) data_dir = getwd()
-if (!exists("loaded_dir")) loaded_dir = data_dir
+if (!exists("data_dir")) data_dir = '\\\\s-jrciprnacl01p-cifs-ipsc.jrc.it/ECOFIN/FinFlows/githubrepo/data/'
 
 source('V:/FinFlows/githubrepo/finflows/routines/utilities.R')
 gc()
@@ -14,8 +13,10 @@ gc()
 aa=readRDS(file.path(data_dir,'aa_iip_fdi.rds')); gc()
 ll=readRDS(file.path(data_dir,'ll_iip_fdi.rds')); gc()
 
+gc()
+
 ## Load BIS LBS data (both Assets and Liabilites)
-alllbs <- readRDS(file.path(loaded_dir,'lbsbuffer/alllbs.rds'))
+alllbs <- readRDS(file.path(data_dir,'lbsbuffer/alllbs.rds'))
 
 alllbs <- do.call(rbind,alllbs)
 
